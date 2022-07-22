@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 //config dotenv
 dotenv.config();
 
-const port:any=6300;
+const port:number=6300 || process.env.PORT;
 
 //config cors
 app.use((_req, res, next) => {
@@ -33,7 +33,7 @@ import controllerRouter from './controller/controller'
 app.use(controllerRouter);
 
 //server listens with the local port 6300 and the localhost
-app.listen(port || process.env.PORT,'0.0.0.0',()=>{
+app.listen(port,'0.0.0.0',()=>{
     console.log("nodejs server is running on "+port);
 });
 
