@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 //config dotenv
 dotenv.config();
 
-const port:number=6300 || process.env.PORT;
+const port:any=6300 || process.env.PORT;
 
 //config cors
 app.use((_req, res, next) => {
